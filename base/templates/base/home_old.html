@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+
+
+{% block content %}
+
+<style>
+    .home-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr; /* Three columns */
+        gap: 20px;
+    }
+
+    .browse-topics {
+        background-color: #f0f0f0;
+        padding: 10px;
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .recent-activity {
+        background-color: #f9f9f9;
+        padding: 10px;
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .room-item {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #ffffff;
+    }
+</style>
+
+<div class="home-container">
+    <div class="browse-topics">
+        {% include 'base/topics_comp.html'%}
+    </div>
+
+    <div class="main-content">
+        {% include 'base/feed.html'%}
+    </div>
+
+    <div class="recent-activity">
+        {% include 'base/activity_component.html' %}
+    </div>
+</div>
+
+
+
+{% endblock content %}
